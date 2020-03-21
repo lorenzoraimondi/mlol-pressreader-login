@@ -26,13 +26,21 @@ try:
     
     # Moving to Pressreader
     driver.get("https://csbno.medialibrary.it/media/scheda.aspx?id=550276273")
+    log("Opening Pressreader...")
     driver.find_element_by_link_text("SFOGLIA").click()
+    log("Connected to Pressreader")
     time.sleep(10)
     driver.switch_to_window(driver.window_handles[1])
-    driver.find_element_by_class_name("alert-close").click()
-    log("Connected to Pressreader")
+    log("Switching window...")
+    try:
+        log("Closing Alert...")
+        driver.find_element_by_class_name("alert-close").click()
+    except Exception as e:
+        log("Error closing Alert:")
+        log(e)
     
     # Pressreader Logging in 
+    log("Logging in Pressreader")
     driver.find_element_by_xpath("//div[@id='toolbarTop']/div/div[3]/a/span/span[2]").click()
     driver.find_element_by_id("SignInEmailAddress").send_keys(PR_USR)
     driver.find_element_by_xpath("//input[@type='password']").send_keys(PR_PSW)
