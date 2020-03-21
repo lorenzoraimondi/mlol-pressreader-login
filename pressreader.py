@@ -26,14 +26,14 @@ try:
     log("Logged in MLOL")
     
     # Moving to Pressreader
-    driver.get("https://csbno.medialibrary.it/media/scheda.aspx?id=550276273")
     log("Opening Pressreader...")
-    time.sleep(10)
-    driver.find_element_by_link_text("SFOGLIA").click()
+    driver.get("https://csbno.medialibrary.it/media/view.aspx?id=550276273")
+    #time.sleep(10)
+    #driver.find_element_by_link_text("SFOGLIA").click()
     log("Connected to Pressreader")
-    time.sleep(10)
-    driver.switch_to_window(driver.window_handles[1])
-    log("Switching window...")
+    #time.sleep(10)
+    #driver.switch_to_window(driver.window_handles[1])
+    #log("Switching window...")
     try:
         log("Closing Alert...")
         driver.find_element_by_class_name("alert-close").click()
