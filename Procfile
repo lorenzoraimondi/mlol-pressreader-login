@@ -1,1 +1,1 @@
-worker: python pressreader.py
+clock: python scheduler.py
