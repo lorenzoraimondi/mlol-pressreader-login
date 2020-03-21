@@ -1,8 +1,11 @@
 import os
+import sys
 import time
 from utilities import log, build_driver
 
 log("Pressreader script start...")
+print("start")
+sys.stdout.flush()
 
 MLOL_USR = os.environ['MLOL_USR']
 MLOL_PSW = os.environ['MLOL_PSW']
