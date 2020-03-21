@@ -1,10 +1,12 @@
 import os
+import sys
 import time
 from selenium import webdriver
 
 def log(string):
     t = time.asctime(time.localtime())
     print("[{}] {}".format(t, string))
+    sys.stdout.flush()
     
 def build_driver():
     log("Getting Chrome binary location from the environment...")
