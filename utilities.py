@@ -7,15 +7,18 @@ def log(string):
     print("[{}] {}".format(t, string))
     
 def build_driver():
+    log("Getting Chrome binary location from the environment...")
     GOOGLE_CHROME_SHIM = os.environ["GOOGLE_CHROME_SHIM"]
-    log("GOOGLE_CHROME_SHIM > {}".format(GOOGLE_CHROME_SHIM))
-    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
-    WAIT = 10
+    log("Found GOOGLE_CHROME_SHIM > {}".format(GOOGLE_CHROME_SHIM))
     
+    WAIT = 10
+    log("Setting Driver implicit wait to {} s".format(WAIT))
+        
     chrome_options = webdriver.ChromeOptions()
     chrome_options.binary_location = GOOGLE_CHROME_SHIM
-    #driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.implicitly_wait(WAIT)
+    
+    log("Driver successfully build")
     
     return driver
