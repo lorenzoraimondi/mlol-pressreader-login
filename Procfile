@@ -1,1 +1,1 @@
-worker: python pressreader.py
+worker: python -u pressreader.py
