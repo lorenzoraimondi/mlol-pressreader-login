@@ -6,6 +6,6 @@ cron_schedule = "0 0 */6 * *" # every 6 days
 debug_schedule = "*/3 * * * *" # every 3 minutes
 
 scheduler = BlockingScheduler()
-scheduler.add_job(job, CronTrigger.from_crontab(cron_schedule))
+scheduler.add_job(job, CronTrigger.from_crontab(debug_schedule))
 
 scheduler.start()
