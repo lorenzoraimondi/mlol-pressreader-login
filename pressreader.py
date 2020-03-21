@@ -13,15 +13,14 @@ log("Config vars read")
 try:
     # Building driver
     driver = build_driver()
-    log("Driver created")
     
     # Getting MLOL login page
     driver.get("https://csbno.medialibrary.it/home/cover.aspx")
     log("Connected to MLOL")
     
     # MLOL Logging in 
-    driver.find_element_by_id("lusername").send_keys(credentials["MLOL"]["USR"]);
-    driver.find_element_by_id("lpassword").send_keys(credentials["MLOL"]["PSW"]);
+    driver.find_element_by_id("lusername").send_keys(MLOL_USR);
+    driver.find_element_by_id("lpassword").send_keys(MLOL_PSW);
     driver.find_element_by_xpath("//input[@name='']").click()
     log("Logged in MLOL")
     
@@ -35,8 +34,8 @@ try:
     
     # Pressreader Logging in 
     driver.find_element_by_xpath("//div[@id='toolbarTop']/div/div[3]/a/span/span[2]").click()
-    driver.find_element_by_id("SignInEmailAddress").send_keys(credentials["PR"]["USR"])
-    driver.find_element_by_xpath("//input[@type='password']").send_keys(credentials["PR"]["PSW"])
+    driver.find_element_by_id("SignInEmailAddress").send_keys(PR_USR)
+    driver.find_element_by_xpath("//input[@type='password']").send_keys(PR_PSW)
     driver.find_element_by_xpath("//button[@type='submit']").click()
     log("Logged in Pressreader")
     
