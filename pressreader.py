@@ -1,4 +1,5 @@
 import os
+import time
 from utilities import log, build_driver
 
 log("Pressreader script start...")
