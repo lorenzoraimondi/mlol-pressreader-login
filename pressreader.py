@@ -27,6 +27,7 @@ try:
     # Moving to Pressreader
     driver.get("https://csbno.medialibrary.it/media/scheda.aspx?id=550276273")
     log("Opening Pressreader...")
+    time.sleep(10)
     driver.find_element_by_link_text("SFOGLIA").click()
     log("Connected to Pressreader")
     time.sleep(10)
