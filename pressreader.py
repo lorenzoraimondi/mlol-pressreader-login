@@ -1,3 +1,4 @@
+import os
 from utilities import log, build_driver
 
 log("Pressreader script start...")
