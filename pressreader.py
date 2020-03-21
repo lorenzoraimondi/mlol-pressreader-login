@@ -20,7 +20,7 @@ def build_driver():
     driver = webdriver.Chrome(chrome_options=chrome_options)
     driver.implicitly_wait(WAIT)
     
-    log("Driver successfully build")
+    log("Driver successfully built")
     
     return driver
 
